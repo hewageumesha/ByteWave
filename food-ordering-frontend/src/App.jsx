@@ -12,6 +12,10 @@ import AdminDashboard from './components/AdminDashboard'
 import MenuPage from './components/MenuPage'
 import CheckoutPage from './components/CheckoutPage'
 import OrderHistory from './components/OrderHistory'
+import StaffManagement from './components/StaffManagement'
+import Reports from './components/Reports'
+import StockManagement from './components/StockManagement'
+import Suppliers from './components/Suppliers'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -124,6 +128,47 @@ function App() {
                 )
               } 
             />
+            {/* Admin Routes */}
+            <Route 
+              path="/admin/staff-management" 
+              element={
+                user && user.role === 'admin' ? (
+                  <StaffManagement user={user} onLogout={handleLogout} />
+                ) : (
+                  <Navigate to="/login" replace />
+                )
+              } 
+            />
+            <Route 
+              path="/admin/reports" 
+              element={
+                user && user.role === 'admin' ? (
+                  <Reports user={user} onLogout={handleLogout} />
+                ) : (
+                  <Navigate to="/login" replace />
+                )
+              } 
+            />
+            <Route 
+              path="/admin/stock-management" 
+              element={
+                user && user.role === 'admin' ? (
+                  <StockManagement user={user} onLogout={handleLogout} />
+                ) : (
+                  <Navigate to="/login" replace />
+                )
+              } 
+            />
+            <Route 
+              path="/admin/suppliers" 
+              element={
+                user && user.role === 'admin' ? (
+                  <Suppliers user={user} onLogout={handleLogout} />
+                ) : (
+                  <Navigate to="/login" replace />
+                )
+              } 
+            />
           </Routes>
         </AnimatePresence>
       </div>
@@ -132,4 +177,7 @@ function App() {
 }
 
 export default App
+
+
+
 
