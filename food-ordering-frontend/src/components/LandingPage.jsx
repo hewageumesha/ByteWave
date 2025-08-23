@@ -48,7 +48,7 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
+      
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -82,7 +82,7 @@ const LandingPage = () => {
         </div>
       </motion.nav>
 
-      {/* Hero Section */}
+     
       <section className="pt-24 pb-16 px-6">
         <div className="container mx-auto text-center">
           <motion.div
@@ -126,7 +126,7 @@ const LandingPage = () => {
             </div>
           </motion.div>
 
-          {/* Floating Food Icons */}
+          
           <div className="relative mt-16">
             {[...Array(6)].map((_, i) => (
               <motion.div
@@ -153,7 +153,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      
       <section className="py-16 bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -175,7 +175,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      
       <section className="py-20 px-6">
         <div className="container mx-auto">
           <motion.div
@@ -219,7 +219,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+     
       <section className="py-20 px-6 bg-gradient-to-r from-orange-500 to-red-500">
         <div className="container mx-auto text-center">
           <motion.div
@@ -247,7 +247,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      
       <footer className="bg-gray-900 text-white py-12 px-6">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-6">
