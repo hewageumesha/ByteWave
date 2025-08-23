@@ -24,17 +24,17 @@ const CheckoutPage = ({ user, onLogout }) => {
   const [cart, setCart] = useState([
     {
       id: 1,
-      name: 'Margherita Pizza',
-      price: 16.99,
+      name: 'Vegetable Rice & Curry',
+      price: 160.00,
       quantity: 2,
-      image: '🍕'
+      image: '🫛'
     },
     {
       id: 2,
-      name: 'Caesar Salad',
-      price: 8.99,
+      name: 'Soft Drinks',
+      price: 120.00,
       quantity: 1,
-      image: '🥗'
+      image: '🥤'
     }
   ])
 
