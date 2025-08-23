@@ -1,12 +1,9 @@
-const express = require('express');
+import express from 'express';
+import orderRoutes from './order.js';
+
 const router = express.Router();
 
-// const userRoutes = require("./api/user"); // More specific import
-const { authenticateToken, authorize } = require('../middleware/auth');
+// Mount order routes
+router.use('/orders', orderRoutes);
 
-router.use(authenticateToken);
-router.use(authorize(['staff']));
-
-// router.use('/user', userRoutes);
-
-module.exports = router;
+export default router;
