@@ -129,7 +129,7 @@ const AdminDashboard = ({ user, onLogout }) => {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-green-100">Total Revenue</p>
-                    <p className="text-3xl font-bold">${stats.totalRevenue.toLocaleString()}</p>
+                    <p className="text-3xl font-bold">Rs.{stats.totalRevenue.toLocaleString()}</p>
                     <p className="text-green-200 text-sm">+12% from last month</p>
                   </div>
                   <DollarSign className="w-8 h-8 text-green-200" />
@@ -317,7 +317,7 @@ const AdminDashboard = ({ user, onLogout }) => {
                           </div>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-green-600">${item.revenue}</p>
+                          <p className="font-bold text-green-600">Rs.{item.revenue}</p>
                           <p className="text-sm text-gray-500">Revenue</p>
                         </div>
                       </motion.div>
