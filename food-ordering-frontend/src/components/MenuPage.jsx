@@ -29,9 +29,9 @@ const MenuPage = ({ user, onLogout }) => {
 
   const categories = [
     { id: 'all', name: 'All Items', icon: '🍽️' },
-    { id: 'pizza', name: 'Pizza', icon: '🍕' },
-    { id: 'burgers', name: 'Burgers', icon: '🍔' },
-    { id: 'salads', name: 'Salads', icon: '🥗' },
+    { id: 'rice', name: 'rice', icon: '🍛' },
+    { id: 'koththu', name: 'koththu', icon: '🍔' },
+    { id: 'shoties', name: 'Shoties', icon: '🥟' },
     { id: 'pasta', name: 'Pasta', icon: '🍝' },
     { id: 'desserts', name: 'Desserts', icon: '🍰' },
     { id: 'drinks', name: 'Drinks', icon: '🥤' }
