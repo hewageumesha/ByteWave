@@ -77,12 +77,12 @@ const CheckoutPage = ({ user, onLogout }) => {
   const handlePlaceOrder = async () => {
     setIsProcessing(true)
     
-    // Simulate order processing
+    
     setTimeout(() => {
       setIsProcessing(false)
       setOrderPlaced(true)
       
-      // Redirect to dashboard after 3 seconds
+       
       setTimeout(() => {
         navigate('/customer-dashboard')
       }, 3000)
@@ -130,7 +130,7 @@ const CheckoutPage = ({ user, onLogout }) => {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
+      
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -198,9 +198,9 @@ const CheckoutPage = ({ user, onLogout }) => {
           </motion.div>
         ) : (
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Order Details Form */}
+             
             <div className="lg:col-span-2 space-y-6">
-              {/* Delivery Information */}
+             
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -248,7 +248,7 @@ const CheckoutPage = ({ user, onLogout }) => {
                 </Card>
               </motion.div>
 
-              {/* Payment Method */}
+               
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -344,9 +344,9 @@ const CheckoutPage = ({ user, onLogout }) => {
               </motion.div>
             </div>
 
-            {/* Order Summary */}
+            
             <div className="space-y-6">
-              {/* Cart Items */}
+               
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -395,7 +395,7 @@ const CheckoutPage = ({ user, onLogout }) => {
                 </Card>
               </motion.div>
 
-              {/* Price Breakdown */}
+               
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
