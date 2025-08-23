@@ -1,10 +1,13 @@
-function App() {
+import React from 'react';
+import { AuthProvider } from './context/AuthContext';
+import AppContent from './AppContent';
 
+function App() {
   return (
-    <>
-      basic
-    </>
-  )
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
