@@ -62,7 +62,7 @@ const LoginPage = ({ onLogin }) => {
     
     setIsLoading(true)
     
-    // Simulate API call
+     
     setTimeout(() => {
       const mockUser = {
         id: 1,
@@ -78,7 +78,7 @@ const LoginPage = ({ onLogin }) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-12 relative overflow-hidden">
-      {/* Background Animation */}
+      
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
           <motion.div
@@ -101,7 +101,7 @@ const LoginPage = ({ onLogin }) => {
         ))}
       </div>
 
-      {/* Back to Home */}
+       
       <Link to="/" className="absolute top-6 left-6 z-10">
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -126,7 +126,7 @@ const LoginPage = ({ onLogin }) => {
             <TabsTrigger value="register">Sign Up</TabsTrigger>
           </TabsList>
 
-          {/* Login Form */}
+          
           <TabsContent value="login">
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
@@ -197,7 +197,7 @@ const LoginPage = ({ onLogin }) => {
             </form>
           </TabsContent>
 
-          {/* Register Form */}
+          
           <TabsContent value="register">
             <form onSubmit={handleRegister} className="space-y-4">
               <div className="space-y-2">
