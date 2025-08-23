@@ -38,7 +38,7 @@ const MenuPage = ({ user, onLogout }) => {
   ]
 
   useEffect(() => {
-    // Mock menu data
+    
     setMenuItems([
       {
         id: 1,
@@ -213,7 +213,7 @@ const MenuPage = ({ user, onLogout }) => {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
+      
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -260,7 +260,7 @@ const MenuPage = ({ user, onLogout }) => {
       </motion.nav>
 
       <div className="container mx-auto px-6 py-8">
-        {/* Header */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -274,7 +274,7 @@ const MenuPage = ({ user, onLogout }) => {
           </p>
         </motion.div>
 
-        {/* Search and Filter */}
+         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -299,7 +299,7 @@ const MenuPage = ({ user, onLogout }) => {
           </div>
         </motion.div>
 
-        {/* Categories */}
+         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -329,7 +329,7 @@ const MenuPage = ({ user, onLogout }) => {
           </div>
         </motion.div>
 
-        {/* Cart Summary (for customers) */}
+         
         {user.role === 'customer' && cart.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -357,7 +357,7 @@ const MenuPage = ({ user, onLogout }) => {
           </motion.div>
         )}
 
-        {/* Menu Items Grid */}
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredItems.map((item, index) => (
             <motion.div
@@ -373,7 +373,7 @@ const MenuPage = ({ user, onLogout }) => {
                     {item.image}
                   </div>
                   
-                  {/* Badges */}
+                   
                   <div className="absolute top-3 left-3 flex flex-col gap-2">
                     {item.isPopular && (
                       <Badge className="bg-red-500 text-white">
@@ -393,7 +393,7 @@ const MenuPage = ({ user, onLogout }) => {
                     )}
                   </div>
 
-                  {/* Favorite Button */}
+                  
                   {user.role === 'customer' && (
                     <button
                       onClick={() => toggleFavorite(item.id)}
@@ -478,7 +478,7 @@ const MenuPage = ({ user, onLogout }) => {
           ))}
         </div>
 
-        {/* No Results */}
+         
         {filteredItems.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}
