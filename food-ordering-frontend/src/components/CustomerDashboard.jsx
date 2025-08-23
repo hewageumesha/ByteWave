@@ -54,25 +54,25 @@ const CustomerDashboard = ({ user, onLogout }) => {
         id: 1,
         name: 'Margherita Pizza',
         price: 16.99,
-        image: '🍕',
+        image: '🍛',
         rating: 4.8,
-        category: 'Pizza'
+        category: 'Rice'
       },
       {
         id: 2,
         name: 'Chicken Burger',
         price: 12.99,
-        image: '🍔',
+        image: '🥟',
         rating: 4.6,
-        category: 'Burgers'
+        category: 'Shoties'
       },
       {
         id: 3,
         name: 'Caesar Salad',
         price: 8.99,
-        image: '🥗',
+        image: '🍹',
         rating: 4.7,
-        category: 'Salads'
+        category: 'Drinks'
       }
     ])
   }, [])
@@ -341,7 +341,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
                           </div>
                         </div>
                         <div className="text-right">
-                          <p className="font-bold text-orange-600">${item.price}</p>
+                          <p className="font-bold text-orange-600">Rs.{item.price}</p>
                           <Button
                             size="sm"
                             onClick={() => addToCart(item)}
@@ -384,7 +384,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
                             <span className="text-2xl">{item.image}</span>
                             <div>
                               <p className="font-medium text-sm">{item.name}</p>
-                              <p className="text-xs text-gray-600">${item.price} each</p>
+                              <p className="text-xs text-gray-600">Rs.{item.price} each</p>
                             </div>
                           </div>
                           <div className="flex items-center space-x-2">
@@ -411,7 +411,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
                       <div className="border-t pt-3 mt-3">
                         <div className="flex justify-between font-bold">
                           <span>Total:</span>
-                          <span className="text-orange-600">${getTotalPrice().toFixed(2)}</span>
+                          <span className="text-orange-600">Rs.{getTotalPrice().toFixed(2)}</span>
                         </div>
                         <Link to="/checkout">
                           <Button className="w-full mt-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
@@ -455,7 +455,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
                           {order.items.join(', ')}
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="font-bold text-orange-600">${order.total}</span>
+                          <span className="font-bold text-orange-600">Rs.{order.total}</span>
                           <div className="flex items-center space-x-2">
                             {order.rating && (
                               <div className="flex items-center">
