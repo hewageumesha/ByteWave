@@ -35,7 +35,6 @@ const AdminDashboard = ({ user, onLogout }) => {
   const [topItems, setTopItems] = useState([])
 
   useEffect(() => {
-    // Mock data
     setStats({
       totalRevenue: 15750.25,
       totalOrders: 342,
@@ -72,7 +71,7 @@ const AdminDashboard = ({ user, onLogout }) => {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
+      
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -104,7 +103,7 @@ const AdminDashboard = ({ user, onLogout }) => {
       </motion.nav>
 
       <div className="container mx-auto px-6 py-8">
-        {/* Welcome Section */}
+         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -118,7 +117,7 @@ const AdminDashboard = ({ user, onLogout }) => {
           </p>
         </motion.div>
 
-        {/* Stats Grid */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -236,9 +235,9 @@ const AdminDashboard = ({ user, onLogout }) => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Content */}
+          
           <div className="lg:col-span-2 space-y-8">
-            {/* Management Actions */}
+             
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -285,7 +284,7 @@ const AdminDashboard = ({ user, onLogout }) => {
               </Card>
             </motion.div>
 
-            {/* Top Selling Items */}
+             
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -329,9 +328,9 @@ const AdminDashboard = ({ user, onLogout }) => {
             </motion.div>
           </div>
 
-          {/* Sidebar */}
+           
           <div className="space-y-6">
-            {/* Recent Activity */}
+             
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -362,7 +361,7 @@ const AdminDashboard = ({ user, onLogout }) => {
               </Card>
             </motion.div>
 
-            {/* Quick Stats */}
+             
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -398,7 +397,7 @@ const AdminDashboard = ({ user, onLogout }) => {
               </Card>
             </motion.div>
 
-            {/* System Status */}
+             
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
