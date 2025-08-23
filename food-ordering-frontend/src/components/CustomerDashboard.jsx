@@ -29,7 +29,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
   const [favoriteItems, setFavoriteItems] = useState([])
 
   useEffect(() => {
-    // Mock data
+    
     setRecentOrders([
       {
         id: 1,
@@ -120,7 +120,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
+      
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -165,7 +165,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
       </motion.nav>
 
       <div className="container mx-auto px-6 py-8">
-        {/* Welcome Section */}
+       
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -179,7 +179,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
           </p>
         </motion.div>
 
-        {/* Quick Stats */}
+        
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -255,9 +255,9 @@ const CustomerDashboard = ({ user, onLogout }) => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Main Content */}
+         
           <div className="lg:col-span-2 space-y-8">
-            {/* Quick Actions */}
+            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -308,7 +308,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
               </Card>
             </motion.div>
 
-            {/* Favorite Items */}
+            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -358,9 +358,9 @@ const CustomerDashboard = ({ user, onLogout }) => {
             </motion.div>
           </div>
 
-          {/* Sidebar */}
+         
           <div className="space-y-6">
-            {/* Cart Summary */}
+            
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -425,7 +425,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
               </Card>
             </motion.div>
 
-            {/* Recent Orders */}
+            
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
