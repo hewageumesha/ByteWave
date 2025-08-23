@@ -30,7 +30,7 @@ const OrderHistory = ({ user, onLogout }) => {
   const [selectedOrder, setSelectedOrder] = useState(null)
 
   useEffect(() => {
-    // Mock order history data
+    
     setOrders([
       {
         id: 1,
@@ -132,7 +132,7 @@ const OrderHistory = ({ user, onLogout }) => {
   })
 
   const reorderItems = (order) => {
-    // In a real app, this would add items to cart and redirect to menu
+    
     alert(`Added ${order.items.length} items to cart!`)
   }
 
@@ -159,7 +159,7 @@ const OrderHistory = ({ user, onLogout }) => {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
+     
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -193,7 +193,7 @@ const OrderHistory = ({ user, onLogout }) => {
       </motion.nav>
 
       <div className="container mx-auto px-6 py-8">
-        {/* Header */}
+      
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -207,7 +207,7 @@ const OrderHistory = ({ user, onLogout }) => {
           </p>
         </motion.div>
 
-        {/* Stats Cards */}
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -264,7 +264,7 @@ const OrderHistory = ({ user, onLogout }) => {
           </motion.div>
         </div>
 
-        {/* Search and Filter */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -300,7 +300,7 @@ const OrderHistory = ({ user, onLogout }) => {
           </div>
         </motion.div>
 
-        {/* Orders List */}
+        
         <div className="space-y-6">
           {filteredOrders.length === 0 ? (
             <motion.div
@@ -432,7 +432,7 @@ const OrderHistory = ({ user, onLogout }) => {
                       </div>
                     </div>
 
-                    {/* Expanded Details */}
+                    
                     {selectedOrder === order.id && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
