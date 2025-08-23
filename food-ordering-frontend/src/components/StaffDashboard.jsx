@@ -29,7 +29,7 @@ const StaffDashboard = ({ user, onLogout }) => {
   })
 
   useEffect(() => {
-    // Mock data
+    
     setOrders([
       {
         id: 1,
@@ -98,7 +98,7 @@ const StaffDashboard = ({ user, onLogout }) => {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
+       
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -130,7 +130,7 @@ const StaffDashboard = ({ user, onLogout }) => {
       </motion.nav>
 
       <div className="container mx-auto px-6 py-8">
-        {/* Welcome Section */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -144,7 +144,7 @@ const StaffDashboard = ({ user, onLogout }) => {
           </p>
         </motion.div>
 
-        {/* Stats Cards */}
+        
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -219,7 +219,7 @@ const StaffDashboard = ({ user, onLogout }) => {
           </motion.div>
         </div>
 
-        {/* Orders Management */}
+         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -342,7 +342,7 @@ const StaffDashboard = ({ user, onLogout }) => {
           </Card>
         </motion.div>
 
-        {/* Quick Actions */}
+         
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
