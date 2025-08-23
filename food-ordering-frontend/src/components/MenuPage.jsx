@@ -5,10 +5,10 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
-import { 
-  Utensils, 
-  Search, 
-  Star, 
+import {
+  Utensils,
+  Search,
+  Star,
   Plus,
   Minus,
   ShoppingCart,
@@ -17,8 +17,14 @@ import {
   Filter,
   Heart,
   Clock,
-  Flame
+  Flame,
+  PlusCircle
 } from 'lucide-react'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "./ui/dialog";
+import { Label } from "./ui/label";
+import { Textarea } from "./ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { Checkbox } from "./ui/checkbox";
 
 const MenuPage = ({ user, onLogout }) => {
   const [menuItems, setMenuItems] = useState([])
@@ -26,6 +32,20 @@ const MenuPage = ({ user, onLogout }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [favorites, setFavorites] = useState(new Set())
+  const [isAddMenuItemDialogOpen, setIsAddMenuItemDialogOpen] = useState(false);
+  const [newMenuItem, setNewMenuItem] = useState({
+    name: '',
+    description: '',
+    price: '',
+    category: 'pizza',
+    image: '🍕',
+    rating: 0,
+    reviews: 0,
+    prepTime: '',
+    isSpicy: false,
+    isVegetarian: false,
+    isPopular: false,
+  });
 
   const categories = [
     { id: 'all', name: 'All Items', icon: '🍽️' },
@@ -211,6 +231,46 @@ const MenuPage = ({ user, onLogout }) => {
     return item ? item.quantity : 0
   }
 
+  const handleAddMenuItemChange = (e) => {
+    const { id, value, type, checked } = e.target;
+    setNewMenuItem(prev => ({
+      ...prev,
+      [id]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handleAddMenuItemSubmit = (e) => {
+    e.preventDefault();
+    // In a real application, you would send a POST request to your backend
+    console.log("Adding new menu item:", newMenuItem);
+    const newId = menuItems.length > 0 ? Math.max(...menuItems.map(item => item.id)) + 1 : 1;
+    setMenuItems(prev => [
+      ...prev,
+      {
+        ...newMenuItem,
+        id: newId,
+        price: parseFloat(newMenuItem.price),
+        prepTime: parseInt(newMenuItem.prepTime),
+        rating: parseFloat(newMenuItem.rating),
+        reviews: parseInt(newMenuItem.reviews),
+      }
+    ]);
+    setNewMenuItem({
+      name: '',
+      description: '',
+      price: '',
+      category: 'pizza',
+      image: '🍕',
+      rating: 0,
+      reviews: 0,
+      prepTime: '',
+      isSpicy: false,
+      isVegetarian: false,
+      isPopular: false,
+    });
+    setIsAddMenuItemDialogOpen(false);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
@@ -225,7 +285,7 @@ const MenuPage = ({ user, onLogout }) => {
               <Utensils className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-              FoodieHub Menu
+              Click2Eat Menu
             </span>
           </Link>
           
@@ -291,6 +351,79 @@ const MenuPage = ({ user, onLogout }) => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
+            
+            {user.role === 'admin' && (
+              <Dialog open={isAddMenuItemDialogOpen} onOpenChange={setIsAddMenuItemDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button className="bg-orange-600 hover:bg-orange-700 text-white shadow-md">
+                    <PlusCircle className="w-4 h-4 mr-2" /> Add New Item
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[600px]">
+                  <DialogHeader>
+                    <DialogTitle>Add New Menu Item</DialogTitle>
+                  </DialogHeader>
+                  <form onSubmit={handleAddMenuItemSubmit} className="grid gap-4 py-4">
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="name" className="text-right">Name</Label>
+                      <Input id="name" value={newMenuItem.name} onChange={handleAddMenuItemChange} className="col-span-3" required />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="description" className="text-right">Description</Label>
+                      <Textarea id="description" value={newMenuItem.description} onChange={handleAddMenuItemChange} className="col-span-3" required />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="price" className="text-right">Price</Label>
+                      <Input id="price" type="number" step="0.01" value={newMenuItem.price} onChange={handleAddMenuItemChange} className="col-span-3" required />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="category" className="text-right">Category</Label>
+                      <Select onValueChange={(value) => setNewMenuItem(prev => ({ ...prev, category: value }))} defaultValue={newMenuItem.category}>
+                        <SelectTrigger className="col-span-3">
+                          <SelectValue placeholder="Select a category" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {categories.filter(cat => cat.id !== 'all').map(cat => (
+                            <SelectItem key={cat.id} value={cat.id}>{cat.name}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="image" className="text-right">Image Emoji</Label>
+                      <Input id="image" value={newMenuItem.image} onChange={handleAddMenuItemChange} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="prepTime" className="text-right">Prep Time (min)</Label>
+                      <Input id="prepTime" type="number" value={newMenuItem.prepTime} onChange={handleAddMenuItemChange} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="rating" className="text-right">Rating</Label>
+                      <Input id="rating" type="number" step="0.1" min="0" max="5" value={newMenuItem.rating} onChange={handleAddMenuItemChange} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="reviews" className="text-right">Reviews Count</Label>
+                      <Input id="reviews" type="number" value={newMenuItem.reviews} onChange={handleAddMenuItemChange} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="isSpicy" className="text-right">Is Spicy</Label>
+                      <Checkbox id="isSpicy" checked={newMenuItem.isSpicy} onCheckedChange={(checked) => setNewMenuItem(prev => ({ ...prev, isSpicy: checked }))} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="isVegetarian" className="text-right">Is Vegetarian</Label>
+                      <Checkbox id="isVegetarian" checked={newMenuItem.isVegetarian} onCheckedChange={(checked) => setNewMenuItem(prev => ({ ...prev, isVegetarian: checked }))} className="col-span-3" />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="isPopular" className="text-right">Is Popular</Label>
+                      <Checkbox id="isPopular" checked={newMenuItem.isPopular} onCheckedChange={(checked) => setNewMenuItem(prev => ({ ...prev, isPopular: checked }))} className="col-span-3" />
+                    </div>
+                    <DialogFooter>
+                      <Button type="submit">Add Menu Item</Button>
+                    </DialogFooter>
+                  </form>
+                </DialogContent>
+              </Dialog>
+            )}
             
             <div className="flex items-center space-x-2">
               <Filter className="w-4 h-4 text-gray-600" />

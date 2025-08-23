@@ -132,7 +132,7 @@ const CustomerDashboard = ({ user, onLogout }) => {
               <Utensils className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-              FoodieHub
+              Click2Eat
             </span>
           </Link>
           
@@ -208,10 +208,10 @@ const CustomerDashboard = ({ user, onLogout }) => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-green-100">Loyalty Points</p>
-                    <p className="text-3xl font-bold">1,250</p>
+                    <p className="text-green-100">Wallet</p>
+                    <p className="text-3xl font-bold">50</p>
                   </div>
-                  <Award className="w-8 h-8 text-green-200" />
+                  <Gift className="w-8 h-8 text-green-200" />
                 </div>
               </CardContent>
             </Card>
@@ -244,10 +244,10 @@ const CustomerDashboard = ({ user, onLogout }) => {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-blue-100">Rewards</p>
-                    <p className="text-3xl font-bold">3</p>
+                    <p className="text-blue-100">Penalty</p>
+                    <p className="text-3xl font-bold">1</p>
                   </div>
-                  <Gift className="w-8 h-8 text-blue-200" />
+                  <Award className="w-8 h-8 text-blue-200" />
                 </div>
               </CardContent>
             </Card>

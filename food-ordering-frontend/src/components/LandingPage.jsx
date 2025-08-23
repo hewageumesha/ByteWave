@@ -63,7 +63,7 @@ const LandingPage = () => {
               <Utensils className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-              FoodieHub
+              Click2Eat
             </span>
           </motion.div>
           
@@ -115,13 +115,15 @@ const LandingPage = () => {
               </Link>
               
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-2 border-orange-300 text-orange-600 hover:bg-orange-50 px-8 py-6 text-lg rounded-full"
-                >
-                  View Menu
-                </Button>
+                <Link to="/menu">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="border-2 border-orange-300 text-orange-600 hover:bg-orange-50 px-8 py-6 text-lg rounded-full"
+                  >
+                    View Menu
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
@@ -184,7 +186,7 @@ const LandingPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Why Choose FoodieHub?
+              Why Choose Click2Eat?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We're committed to delivering not just food, but an exceptional experience
@@ -231,7 +233,7 @@ const LandingPage = () => {
               Ready to Satisfy Your Cravings?
             </h2>
             <p className="text-xl text-orange-100 mb-8">
-              Join thousands of food lovers who trust FoodieHub for their daily meals
+              Join thousands of food lovers who trust Click2Eat for their daily meals
             </p>
             <Link to="/login">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -254,15 +256,7 @@ const LandingPage = () => {
             <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
               <Utensils className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold">FoodieHub</span>
-          </div>
-          <p className="text-gray-400 mb-4">
-            Bringing delicious food to your doorstep since 2024
-          </p>
-          <div className="flex justify-center space-x-6 text-sm text-gray-400">
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
-            <span>Contact Us</span>
+            <span className="text-xl font-bold">Click2Eat</span>
           </div>
         </div>
       </footer>

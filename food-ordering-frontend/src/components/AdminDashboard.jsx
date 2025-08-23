@@ -84,7 +84,7 @@ const AdminDashboard = ({ user, onLogout }) => {
               <Utensils className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              FoodieHub Admin
+              Click2Eat Admin
             </span>
           </Link>
           
@@ -254,31 +254,39 @@ const AdminDashboard = ({ user, onLogout }) => {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button className="w-full h-20 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white flex-col">
-                        <Users className="w-6 h-6 mb-2" />
-                        Staff Management
-                      </Button>
+                      <Link to="/admin/staff-management">
+                        <Button className="w-full h-20 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white flex-col">
+                          <Users className="w-6 h-6 mb-2" />
+                          Staff Management
+                        </Button>
+                      </Link>
                     </motion.div>
                     
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button variant="outline" className="w-full h-20 flex-col border-2 border-green-300 text-green-600 hover:bg-green-50">
-                        <BarChart3 className="w-6 h-6 mb-2" />
-                        Reports
-                      </Button>
+                      <Link to="/admin/reports">
+                        <Button variant="outline" className="w-full h-20 flex-col border-2 border-green-300 text-green-600 hover:bg-green-50">
+                          <BarChart3 className="w-6 h-6 mb-2" />
+                          Reports
+                        </Button>
+                      </Link>
                     </motion.div>
                     
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button variant="outline" className="w-full h-20 flex-col border-2 border-blue-300 text-blue-600 hover:bg-blue-50">
-                        <Package className="w-6 h-6 mb-2" />
-                        Stock Management
-                      </Button>
+                      <Link to="/admin/stock-management">
+                        <Button variant="outline" className="w-full h-20 flex-col border-2 border-blue-300 text-blue-600 hover:bg-blue-50">
+                          <Package className="w-6 h-6 mb-2" />
+                          Stock Management
+                        </Button>
+                      </Link>
                     </motion.div>
                     
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button variant="outline" className="w-full h-20 flex-col border-2 border-orange-300 text-orange-600 hover:bg-orange-50">
-                        <Truck className="w-6 h-6 mb-2" />
-                        Suppliers
-                      </Button>
+                      <Link to="/admin/suppliers">
+                        <Button variant="outline" className="w-full h-20 flex-col border-2 border-orange-300 text-orange-600 hover:bg-orange-50">
+                          <Truck className="w-6 h-6 mb-2" />
+                          Suppliers
+                        </Button>
+                      </Link>
                     </motion.div>
                   </div>
                 </CardContent>
@@ -365,7 +373,7 @@ const AdminDashboard = ({ user, onLogout }) => {
             {/* Quick Stats */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0 }}
             >
               <Card>
