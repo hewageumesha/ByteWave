@@ -262,7 +262,7 @@ function ChartLegendContent({
   );
 }
 
-// Helper to extract item config from a payload.
+
 function getPayloadConfigFromPayload(
   config,
   payload,
