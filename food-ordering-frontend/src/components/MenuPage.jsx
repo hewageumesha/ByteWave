@@ -344,7 +344,7 @@ const MenuPage = ({ user, onLogout }) => {
                     <h3 className="font-semibold text-gray-800">
                       {getTotalItems()} items in cart
                     </h3>
-                    <p className="text-gray-600">Total: ${getTotalPrice().toFixed(2)}</p>
+                    <p className="text-gray-600">Total: Rs.{getTotalPrice().toFixed(2)}</p>
                   </div>
                   <Link to="/checkout">
                     <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
